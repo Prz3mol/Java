@@ -1,0 +1,16 @@
+public class ppj_7_4 {
+    public static void main(String[] args) {
+        int rozmiar = 9;
+        int rogi= rozmiar/2;
+        for (int i = 0; i < rozmiar; i++) {
+            for (int j = 0; j < rozmiar; j++) {
+                if (!((i+j<rogi)||(i+j>=rozmiar+rogi)||(i-j>rogi)||(i-j<=rogi-rozmiar))){
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println(" ");
+        }
+    }
+}
