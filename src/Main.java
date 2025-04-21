@@ -30,19 +30,19 @@ public class Main {
 
         System.out.println("generowanie tablicy 0 -> 1000");
 
-        int ltab[] = new int[1000];
+        int ltab[] = new int[1000000000];
         for (int i = 0; i < ltab.length; i++) {
             ltab[i] += i;
         }
         System.out.println("Wygenerowano");
 
         long startBinl = System.nanoTime();
-        System.out.println("BinSerch dla wiekszej ilosci danych: " +  binSerch(ltab, ltab.length, 6));
+        System.out.println("BinSerch dla wiekszej ilosci danych: " +  binSerch(ltab, ltab.length, 4600));
         long stopBinl = System.nanoTime();
         System.out.println("Czas BinSercha: " +  (stopBinl - startBinl));
 
         long startJumpl = System.nanoTime();
-        System.out.println("JumpSerch: " + jumpSerch(ltab, 6));
+        System.out.println("JumpSerch: " + jumpSerch(ltab, 533215));
         long stopJumpl = System.nanoTime();
         System.out.println("Czas JumpSercha dla wiekszej ilosci danych: " +  (stopJumpl - startJumpl));
 
@@ -80,12 +80,12 @@ public class Main {
 
     public static int jumpSerch(int[] S, int key){
         int n = S.length;
-        int jump = (int) Math.floor(Math.sqrt(n));
+        int jump = 100000;
         int prev = 0;
 
         while (S[Math.min(jump, n) - 1] < key) {
             prev = jump;
-            jump += (int) Math.floor(Math.sqrt(n));
+            jump += 100000;
             if (prev >= n) {
                 return -1;
             }
